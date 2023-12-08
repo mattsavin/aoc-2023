@@ -1,6 +1,5 @@
 from collections import defaultdict
 
-
 lines = [x for x in open("day2.txt", "r").read().strip().split("\n")]
 
 def part1(lines):
