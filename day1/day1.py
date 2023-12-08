@@ -1,4 +1,4 @@
-def partOne(data):
+def part_one(data):
     fullArray = []
     smallArray = []
 
@@ -9,10 +9,10 @@ def partOne(data):
         fullArray.append(smallArray)
         smallArray = []
 
-    print("Part one: ", sum(int(i[0] + i[-1]) for i in fullArray))
+    return sum(int(i[0] + i[-1]) for i in fullArray)
 
 
-def partTwo(data):
+def part_two(data):
     # Numbers can only be a part of another with the first or last letters
     translation = {'zero': 'z0o', 'one': 'o1e', 'two': 't2o', 'three': 't3e',
                'four': 'f4r', 'five': 'f5e', 'six': 's6x', 'seven': 's7n',
@@ -24,8 +24,8 @@ def partTwo(data):
             line = line.replace(key, value)
         numbers = [j for j in line if j.isdigit()]
         total  += int(numbers[0] + numbers[-1])
-    print("Part two: ", total)
+    return total
 
 data = open("day1.txt", "r").read().split("\n")
-partOne(data)
-partTwo(data)
+print("Part one: ", part_one(data))
+print("Part two: ", part_two(data))
